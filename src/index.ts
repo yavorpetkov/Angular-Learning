@@ -87,13 +87,52 @@ const add: MathFunc = (x: number, y: number): number => x + y;
 const sub: MathFunc = (x: number, y: number): number => x - y;
 
 // Classes
-class Person {
+interface PersonInterface {
 	id: number;
 	name: string;
+	register(): string;
+}
+
+class Person implements PersonInterface {
+	id: number;
+	// private id: number;
+	// // private can only be accesed from this class
+	name: string;
+	// protected name: string;
+	// // protected can only be accesed from this class and extended classes
 
 	constructor(id: number, name: string) {
 		this.id = id;
 		this.name = name;
 	}
+	register() {
+		return `${this.name} is now registered`;
+	}
 }
+
+// yavor.id = 5
+// yavor.name = kamen
 const yavor = new Person(1, 'yavor');
+
+// subclass
+class Employee extends Person {
+	position: string;
+
+	constructor(id: number, name: string, position: string) {
+		super(id, name);
+		this.position = position;
+	}
+}
+
+const emp = new Employee(3, 'yavor', 'developer');
+console.log(emp.name);
+
+// Genenrics
+function getArray<T>(items: T[]): T[] {
+	return new Array().concat(items);
+}
+// the T is a placeholder of the type
+let numArray = getArray<number>([ 1, 2, 3, 4 ]);
+let strrray = getArray<string>([ 'ab', 'cd', 'ef', 'gh' ]);
+
+// numArray.push('hello');
