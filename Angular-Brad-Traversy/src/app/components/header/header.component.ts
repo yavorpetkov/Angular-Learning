@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 	title: string = 'ANGULAR LEARNING';
+	public buttonColor = 'red';
 
 	constructor() {}
 
