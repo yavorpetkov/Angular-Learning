@@ -1,5 +1,5 @@
-import { task } from './Task';
-export const TASKS: task[] = [
+import { Task } from './models/Task';
+export const TASKS: Task[] = [
 	{
 		id: 1,
 		text: 'Doctors Apointment',
