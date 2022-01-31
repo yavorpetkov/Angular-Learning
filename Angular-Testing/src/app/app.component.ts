@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 
 @Component({
@@ -12,6 +12,7 @@ export class AppComponent {
 	selectedChild = 0;
 	show = true;
 
+	@ViewChild('input') input?: ElementRef<HTMLInputElement>;
 	@ViewChild(ViewChildComponent)
 	set child(v: ViewChildComponent) {
 		setTimeout(() => {

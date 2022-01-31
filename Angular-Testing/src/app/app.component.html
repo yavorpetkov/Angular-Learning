@@ -7,4 +7,7 @@
 </div>
 <child [id]="1" *ngIf="show"></child>
 <child [id]="2" *ngIf="!show"></child>
+<div>
+  <input type="text" #input>
+</div>
 <button (click)="toggle()">Change Child</button>
